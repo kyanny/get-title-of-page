@@ -4,7 +4,7 @@ require 'nokogiri'
 require 'open-uri'
 
 get '/' do
-    "curl https://re-maker.herokuapp.com/ -d url=https://example.com/"
+    "curl https://get-title-of-page.herokuapp.com/ -d url=https://example.com/"
 end
 
 post '/' do
