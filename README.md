@@ -1,2 +1,3 @@
-# re-maker
-Make Re: for the page title
+# get-title-of-page
+
+Get page title from URL
