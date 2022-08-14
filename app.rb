@@ -3,8 +3,16 @@ require 'sinatra/json'
 require 'nokogiri'
 require 'open-uri'
 
+helpers do
+    def h(text)
+      Rack::Utils.escape_html(text)
+    end
+end
+
 get '/' do
-    "curl https://get-title-of-page.herokuapp.com/ -d url=https://example.com/"
+    # request.base_url from https://stackoverflow.com/a/10340736
+    usage = "curl -X POST %s -d url=%s" % [request.base_url, 'https://example.com/']
+    erb :index, locals: { usage: usage }
 end
 
 post '/' do
