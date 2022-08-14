@@ -17,5 +17,5 @@ end
 
 post '/' do
     url = params['url']
-    Nokogiri::HTML(URI.open(params['url'])).css('title').text
+    Nokogiri::HTML(URI.open(params['url'])).css('title').first.text
 end
